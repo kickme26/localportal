@@ -1,0 +1,24 @@
+@(level: String)(gg: String => play.twirl.api.Html)
+
+@level match {
+    case "success" => {
+        <p class="success">
+            @gg("green")
+        </p>
+    }
+    case "warning" => {
+        <p class="warning">
+            @gg("orange")
+        </p>
+    }
+    case "error" => {
+        <p class="error">
+            @gg("red")
+        </p>
+    }
+    case _ => {
+        <p class="default">
+            @gg("black")
+        </p>
+    }
+}

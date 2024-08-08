@@ -1,0 +1,10 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    
+    "metals.javaHome" : "D://plm//java11//jdk-11.0.16.1",
+    "java.home": "D://plm//java11//jdk-11.0.16.1"
+    
+
+}

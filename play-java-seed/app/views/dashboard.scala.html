@@ -1,0 +1,43 @@
+@import play.api.mvc._
+@import tags.Button
+@import tags.sidebar
+@import tags.links
+@import tags.homeprofile
+@import tags.header
+@import tags.timeline
+@import tags.teammembers
+@import tags.progressbar
+@(sidemenu: Seq[String])
+@main("Hello"){
+@header()
+
+<div class="d-flex">
+
+    <div class="sidebar" style="width: 280px; height: 100vh; position: fixed;">
+        @sidebar(sidemenu)
+    </div>
+
+    <div class="flex-grow-1" style="margin-left: 280px; padding: 20px;">
+        <div class="row">
+            <div class="col-7">
+                <!-- Empty center section or add content if needed -->
+                @timeline()
+               
+            </div>
+            <div class="col-5">
+                @teammembers() 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+               
+            </div>
+            <div class="col-5">
+                @progressbar()
+            </div>
+        </div>
+    </div>
+
+</div>
+
+}

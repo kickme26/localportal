@@ -1,0 +1,30 @@
+@import play.api.mvc._
+@import tags.Button
+@import tags.sidebar
+@import tags.links
+@import tags.homeprofile
+@import tags.header
+@(name: String, password: String, sidemenu: Seq[String])
+
+
+@main("Hello") {
+
+    @header()
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            @sidebar(sidemenu)
+        </div>
+        <!-- Main content area -->
+        <div class="main-content d-flex flex-column flex-grow-1">
+            <div class="homeprofile">
+                @homeprofile()
+            </div>
+            <div class="links">
+                @links()
+            </div>
+        </div>
+    </div>
+    
+    
+}

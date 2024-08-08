@@ -1,0 +1,36 @@
+@import play.data.Form;
+@import helper._
+@import models.LoginDetails
+@import play.api.i18n.{Messages, MessagesProvider}
+@import play.mvc.Http.Request
+@(loginForm: Form[LoginDetails])(implicit request: Request, messages: play.i18n.Messages)
+
+@main("Login Page") {
+
+    <link rel="stylesheet" type="text/css" href='@routes.Assets.versioned("stylesheets/login.css")'>
+
+    <style>
+        body {
+            background-image: url('@routes.Assets.versioned("images/login-background-image.png")');
+        } 
+    </style>
+
+    <img id="top-right-logo" src='@routes.Assets.versioned("images/top-right-logo.png")' alt="Logo">
+    <div class="login-panel">
+        @helper.form(action = routes.IzController.loginSubmit()) {
+           
+            <img id="form-box-logo" src='@routes.Assets.versioned("images/iconnect-logo.png")' alt="Logo">
+            @CSRF.formField  
+
+            @helper.inputText(loginForm("Username"), 'id -> "Username", 'class -> "input-text",'placeholder -> "Username")
+
+            @helper.inputPassword(loginForm("Password"), 'class -> "input-password",'id -> "Password", 'placeholder -> "Password")
+
+            <div class="forgotpassword">
+                <p>Forgot password?</p> 
+            </div>
+
+            <input id="login-submit" type="submit" value="Login" width="48" height="48">
+        }
+    </div>
+}

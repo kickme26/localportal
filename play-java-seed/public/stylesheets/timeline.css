@@ -1,0 +1,41 @@
+ul.timeline-3 {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+ul.timeline-3:before {
+    content: " ";
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+
+ul.timeline-3 > li {
+    margin: 20px 0;
+    padding-left: 50px; /* Increased padding for clarity */
+    position: relative;
+}
+
+ul.timeline-3 > li:before {
+    content: " ";
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px; /* Align with the vertical line */
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+ul.timeline-3 > li .progressbar-js-circle {
+    position: relative; /* Ensure progress bar stays within the list item */
+    margin: 0;
+}

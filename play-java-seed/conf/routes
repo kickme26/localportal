@@ -1,0 +1,35 @@
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Import controllers package
+
+# Define your routes below
+#   GET     /                           controllers.HomeController.index()
+#   GET     /login                      controllers.HomeController.login()
+
+# Disable CSRF protection for this route
++ nocsrf
+#   POST    /login                      controllers.HomeController.loginPost()
+
+
+# Route with a parameter (name)
+#   GET     /home/:name                 controllers.HomeController.testPost(name: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Display the login form
+GET     /login                      controllers.IzController.login(request: Request)
+
+GET     /home                      controllers.IzController.home(request: Request)
+
+# Handle form submission
+POST    /login                      controllers.IzController.loginSubmit(request: Request)
+
+
+GET     /Dashboard                  controllers.IzDashboard.dashboard(request: Request)
+GET     /profile                    controllers.IzController.login(request: Request)
+GET     /calendar                   controllers.IzController.login(request: Request)
+
+
+
